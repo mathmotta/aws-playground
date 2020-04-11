@@ -1,2 +1,7 @@
-# aws-playground
-A playground with experiments and lots of information about containerization and the use of containers on AWS
+# AWS Playground
+
+This project's goal is to be a repository of test files and information on containerization and using containers on AWS(Amazon Web Services)
+
+It can be used by anyone who wishes to understand more about containers as well as provide multiple file samples.
+
+# Summary
