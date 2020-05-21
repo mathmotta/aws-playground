@@ -1,0 +1,40 @@
+# Envoy and AWS App Mesh
+
+Network: primary infrastructure layer.
+
+Communication between services and the stability, flexibility and latency of that communication is the most import aspect of the architecture.
+
+However, many of the popular standard protocols regarding network communication were designed before microservices.
+
+## Amazon Route 53
+
+Proven, battle-tested fully managed DNS service that offers 100% uptime SLA.
+
+With AWS VPC and Amazon Route 53, why do we need anything else?
+
+## Common issues
+
+1. Generate uniformity of logs, metrics, traces
+2. How to load balance traffic between services
+3. How to weight and shift traffic between deployments
+4. How to minimize application code impact of networking or configuration changes to application code
+5. How to decouple service teams and reduce hard dependencies
+
+## Solution: Service Mesh
+
+A small lightweight proxy server next to each and every container, then wire up a separate overlay network between these proxy servers on top of the existing networking provided by the infrastructure layer such as AWS VPC
+
+Since all network trafic goes through this proxy server, the application behind the proxy can remain unaware of anything beyond the proxy
+Also, all routing and logical separation of network trafic can be centralized and abstracted regardless of the specific implementation.
+
+Monitoring, debugging, tracing and loggin can all be centralized and analyzed together, providing significant visibility into both the overall application architecture as well as specific microservices themselves.
+
+## AWS App Mesh 
+
+An implementation of the open source Envoy, deployed as a side-car container.
+
+First it sits between all services and manages and observes traffic, secondly it communicates with the control plane, which generates the proxy configuration based on application or architectural requirements, and then distributes the appropriate proxy configuration to each side-car.
+
+The side-car is deployed simultaneously, but configured separetly to the application.
+
+
