@@ -1,0 +1,39 @@
+# Observability
+
+Container host changes. Why:
+
+1. Component failure
+2. Retiring old infrastructure or software
+3. Scaling up or down
+
+This means difficulties tracking down issues within the system.
+
+In order to track down issues, we need to verify logs with monitoring tools.
+
+## Monitoring
+
+It's a constant action, something we do.
+
+1. Collect metrics
+2. Collect logs
+3. Watch network traffic
+
+When something goes wrong, automatic alerts goes to someone or something to try to remediate the problem.
+
+So monitoring is the act of collecting data. What type of data, what we with it and its availability is a different story. This is where observability comes to play.
+
+## Observability
+
+It's __not__ something we do. Instead, is more of a property of a system. A system can be observable, or not. An observable system allows us to measure how well the internal workings of the system are from the output of that same system.
+
+### Tracing software
+
+Allows to understand the flow of our service. 
+
+With microservices, we have services calling each other to perform a singular task. Tracing then allows us to collect the data on the calls between services, measure performance of each individual service, and view the system as a whole regarding latency between those services.
+
+### AWS R-Ray
+
+Allows us to achieve observability. Collects data about requests that application serves and provide us with tools to view, filter and gain insight into that data.
+
+
