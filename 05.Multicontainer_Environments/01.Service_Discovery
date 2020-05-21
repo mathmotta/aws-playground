@@ -1,0 +1,36 @@
+# Service Discovery
+
+Problem: A Container is not an Island.
+
+Apps are broken down into multiple services that are containerized and we need to find an easy and dynamic way to allow the containers that compose our application to communicate with each other.
+
+## Monolithic Apps
+
+Application code manages the commmunication between the different pieces of the app
+
+## Microservices and Containerized Apps
+
+In order to communicate between different pieces of our app, we need to have a successful network call.
+
+So we direct network trafic to the IP address and port of the service.
+
+Since containers locations are very dynamic in nature, it's hard to know where to direct a request.
+
+So we need a way to map services to one another for communication in a loosely coupled way
+
+## Service Discovery
+
+Is the management of directing network calls between services and exposing services to one another in an automatic and dynamic way.
+
+In this case, a service discovery through DNS is needed.Aws has a service for that AWS Cloud Map
+
+### Service meshes
+
+Additional layer for handling interservice communication, responsible for monitoring/controlling traffic in microservice architectures
+
+Allows tasks like service discovery to be handled completely by this mesh layer
+
+AWS has a service called AWS App Mesh that does just that
+
+
+
